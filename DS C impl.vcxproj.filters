@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Data Structures">
+      <UniqueIdentifier>{6c9d3877-f979-4b1a-b03d-e1d6fcb7881d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Linked List">
+      <UniqueIdentifier>{2d5aeabc-9e81-433e-9925-74b30de36c79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Algorithms">
+      <UniqueIdentifier>{7511814f-891a-4fd1-9148-f61b3104ecc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Stack">
+      <UniqueIdentifier>{8c2dd6d7-df4d-42aa-9d84-8f11e26066bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Queue">
+      <UniqueIdentifier>{3778e1ad-af01-46b9-bc5d-60db3537bdf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Doubly Linked list">
+      <UniqueIdentifier>{b691bd46-1c24-4b8c-90a0-af5c60be87d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Trees">
+      <UniqueIdentifier>{a9546181-777f-4f8d-a791-96cff0e4450b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Trees\BST">
+      <UniqueIdentifier>{1a7a421e-8a96-4289-8f08-7694a5bfcd6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Trees\BT">
+      <UniqueIdentifier>{a3304d35-78d9-4bc4-8eb0-69ebd9094592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Trees\Heap">
+      <UniqueIdentifier>{e91c67bf-f1bf-44df-bbe9-3e31e5d20705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data Structures\Trees\AVL">
+      <UniqueIdentifier>{23495a8f-6316-43bb-83f5-c35e321f83ed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="driver.c">
+      <Filter>Source Files\Data Structures\Linked List</Filter>
+    </ClCompile>
+    <ClCompile Include="SLL_DS_functions.h">
+      <Filter>Source Files\Data Structures\Linked List</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="node.h">
+      <Filter>Source Files\Data Structures\Linked List</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
