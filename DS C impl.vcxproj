@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="driver.c" />
-    <ClCompile Include="SLL_DS_functions.h" />
+    <ClCompile Include="Source\driver.c" />
+    <ClCompile Include="Header Files\SLL_DS_functions.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="node.h" />
+    <ClInclude Include="Header Files\node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
