@@ -14,7 +14,7 @@ Node* find_element_by_index(int node_index, Node* head);
 
 
 void insert_at_beginning(int node_data, Node** pointer_to_head_pointer);
-void insert_at_end(int node_data, Node* head);
+void insert_at_end(int node_data, Node* head, Node** pointer_to_head_pointer);
 int insert_at_index(int node_data, int insert_index, Node* head, Node** pointer_to_head_pointer);
 
 

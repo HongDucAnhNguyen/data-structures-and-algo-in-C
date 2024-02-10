@@ -48,15 +48,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\driver.c">
+    <ClCompile Include="Data Structures\Source\driver.c">
       <Filter>Source Files\Data Structures\Linked List</Filter>
     </ClCompile>
-    <ClCompile Include="Header Files\SLL_DS_functions.h">
+    <ClCompile Include="Data Structures\Header Files\SLL_DS_functions.h">
       <Filter>Source Files\Data Structures\Linked List</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header Files\node.h">
+    <ClInclude Include="Data Structures\Header Files\node.h">
       <Filter>Source Files\Data Structures\Linked List</Filter>
     </ClInclude>
   </ItemGroup>

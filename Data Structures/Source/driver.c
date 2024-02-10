@@ -1,64 +1,135 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "../Header Files/SLL_DS_functions.h"
 
 
 
 int main() {
 
-	Node* head = malloc(sizeof(Node));
-	Node* node2 = malloc(sizeof(Node));
+	int option = 0;
+	int data = 0;
+	int index = 0;
 
-
-	head->data = 5;
-	head->next_node_ptr = node2;
-
-
-	node2->data = 10;
-	node2->next_node_ptr = NULL;
-
-
-	printf("Linked list is %s", is_empty(head) ? "empty\n" : "not empty\n");
-
-	traverse_linked_list(head);
-
-	insert_at_beginning(23, &head);
-	traverse_linked_list(head);
-
-	insert_at_end(45, head);
-	traverse_linked_list(head);
-
-	insert_at_index(11, 0, head, &head);
-	traverse_linked_list(head);
-
-
-	insert_at_index(34, 3, head, &head);
-	traverse_linked_list(head);
-
-	remove_at_end(head);
-	traverse_linked_list(head);
-
-	remove_at_beginning(&head, head);
-	traverse_linked_list(head);
-
-	find_element_by_value(10, head);
-	traverse_linked_list(head);
-
-	remove_at_index(3, head, &head);
-	traverse_linked_list(head);
+	Node* head = NULL;
 
 
 
-	remove_at_index(0, head, &head);
-	traverse_linked_list(head);
+	while (1) {
+
+		printf("Choose an option [1-12]:\n");
+		printf("1. Insert:\n2. Insert at index\n3. Prepend\n");
+		printf("4. Remove at beginning\n5. Remove at end\n6. Remove at index\n");
+		printf("7. Show list\n9. Check if empty\n10. Find node by value\n11. Find node by index\n12. Exit Program\n");
+		printf("Enter option: ");
+		scanf_s("%d", &option);
+
+
+		switch (option)
+		{
+		case 1:
+
+			printf("Selected option: Insert\n");
+			printf("Enter data of node: ");
+			scanf_s("%d", &data);
+
+
+			printf("\n");
+			insert_at_end(data, head, &head);
+			break;
+		case 2:
+			printf("Selected option: Insert at index\n");
+			printf("Enter data of node: ");
+			scanf_s("%d", &data);
+
+			printf("\n");
+
+			printf("Enter index of node: ");
+			scanf_s("%d", &index);
+
+			printf("\n");
+			insert_at_index(data, index, head, &head);
+			break;
+		case 3:
+			printf("Selected option: Prepend\n");
+			printf("Enter data of node: ");
+			scanf_s("%d", &data);
+
+			printf("\n");
+
+
+			insert_at_beginning(data, &head);
+			break;
+		case 4:
+			printf("Selected option: Remove at beginning\n");
+			remove_at_beginning(&head, head);
+			break;
+		case 5:
+			printf("Selected option: Remove at end\n");
+			remove_at_end(head);
+			break;
+		case 6:
+			printf("Selected option: Remove at index\n");
+
+
+			printf("Enter index of node: ");
+			scanf_s("%d", &index);
+
+			printf("\n");
+			remove_at_index(index, head, &head);
+			break;
+		case 7:
+			printf("Selected option: Show list\n");
+			traverse_linked_list(head);
+			break;
+
+		case 9:
+			printf("Selected option: Check if empty\n");
+			printf("Linked list is %s", is_empty(head) ? "empty\n" : "not empty\n");
+			break;
+		case 10:
+			printf("Selected option: Find by Value\n");
+			printf("Enter data of node: ");
+			scanf_s("%d", &data);
 
 
 
-	free_list(head);
+			printf("\n");
+			find_element_by_value(data, head);
+
+			break;
+		case 11:
+			printf("Selected option: Find by index\n");
+
+			printf("Enter index of node: ");
+			scanf_s("%d", &index);
+
+			printf("\n");
+			find_element_by_index(index, head);
+
+			break;
+
+		case 12:
+			printf("Selected option: Exit program\n");
+			free_list(head);
+			printf("GOODBYE!\n");
+			exit(0); // Exit the program
+
+
+		default:
+			printf("Invalid option! Please choose again.\n");
+			break;
+		}
+
+
+
+
+	}
 	return 0;
 }
 
-
 bool is_empty(Node* head) {
+
+
 	return (head == NULL);
 
 }
@@ -114,24 +185,34 @@ void insert_at_beginning(int node_data, Node** ptr_to_head_ptr) {
 
 
 }
-void insert_at_end(int node_data, Node* head)
+void insert_at_end(int node_data, Node* head, Node** ptr_to_head_ptr)
 {
 
-	Node* current_location = head;
-	Node* new_node = malloc(sizeof(Node));
-	new_node->data = node_data;
-	new_node->next_node_ptr = NULL;
-
-
-
-	while (current_location->next_node_ptr != NULL) {
-
-		current_location = current_location->next_node_ptr;
-
-
+	if (is_empty(head)) {
+		insert_at_beginning(node_data, ptr_to_head_ptr);
 
 	}
-	current_location->next_node_ptr = new_node;
+
+	else {
+		Node* current_location = head;
+		Node* new_node = malloc(sizeof(Node));
+		new_node->data = node_data;
+		new_node->next_node_ptr = NULL;
+
+
+
+		while (current_location->next_node_ptr != NULL) {
+
+			current_location = current_location->next_node_ptr;
+
+
+
+		}
+		current_location->next_node_ptr = new_node;
+	}
+
+
+
 
 
 }
@@ -200,7 +281,7 @@ Node* find_element_by_index(int node_index, Node* head) {
 	Node* current_location = head;
 	while (current_location != NULL) {
 		if (index_counter == node_index) {
-			printf("\nfound node with matching index at address %p\n", current_location);
+			printf("\nfound node with matching index with value: %d\n", current_location->data);
 			return current_location;
 		}
 
