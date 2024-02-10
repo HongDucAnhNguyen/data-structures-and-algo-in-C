@@ -401,14 +401,14 @@ void reverse_linked_list(Node* head, Node** ptr_to_head_ptr) {
 	Node* current = head;
 	Node* prev = NULL;
 	Node* next = NULL;
-	int index_counter = 0;
+
 	while (current != NULL) {
 
 		next = current->next_node_ptr;
 		current->next_node_ptr = prev;
 		prev = current;
 		current = next;
-		index_counter += 1;
+
 	}
 	*ptr_to_head_ptr = prev;
 
