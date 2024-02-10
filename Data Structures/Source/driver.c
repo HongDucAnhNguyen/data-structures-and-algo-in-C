@@ -6,20 +6,20 @@
 
 int main() {
 
-	int option = 0;
-	int data = 0;
-	int index = 0;
+	int option = -1;
+	int data = -1;
+	int index = -1;
 
 	Node* head = NULL;
-
+	Node* result = NULL;
 
 
 	while (1) {
 
 		printf("Choose an option [1-12]:\n");
-		printf("1. Insert:\n2. Insert at index\n3. Prepend\n");
+		printf("0. Exit program\n1. Insert:\n2. Insert at index\n3. Prepend\n");
 		printf("4. Remove at beginning\n5. Remove at end\n6. Remove at index\n");
-		printf("7. Show list\n9. Check if empty\n10. Find node by value\n11. Find node by index\n12. Exit Program\n");
+		printf("7. Show list\n9. Check if empty\n10. Find node by value\n11. Find node by index\n12. Reverse the list\n");
 		printf("Enter option: ");
 		scanf_s("%d", &option);
 
@@ -94,8 +94,10 @@ int main() {
 
 
 			printf("\n");
-			find_element_by_value(data, head);
-
+			result = find_element_by_value(data, head);
+			if (result == NULL) {
+				printf("No matching nodes found\n");
+			}
 			break;
 		case 11:
 			printf("Selected option: Find by index\n");
@@ -104,11 +106,17 @@ int main() {
 			scanf_s("%d", &index);
 
 			printf("\n");
-			find_element_by_index(index, head);
-
+			result = find_element_by_index(index, head);
+			if (result == NULL) {
+				printf("No matching nodes found\n");
+			}
 			break;
-
 		case 12:
+			printf("Selected option: Reverse List\n");
+
+			reverse_linked_list(head, &head);
+			break;
+		case 0:
 			printf("Selected option: Exit program\n");
 			free_list(head);
 			printf("GOODBYE!\n");
@@ -276,7 +284,7 @@ Node* find_element_by_value(int node_data, Node* head) {
 	}
 
 
-	printf("\nNo matching nodes found\n");
+
 	return NULL;
 
 }
@@ -297,7 +305,7 @@ Node* find_element_by_index(int node_index, Node* head) {
 	}
 
 
-	printf("\nNo matching nodes found\n");
+
 	return NULL;
 
 }
@@ -383,5 +391,31 @@ void remove_at_beginning(Node** ptr_to_head_ptr, Node* head)
 }
 
 //-------------------REMOVAL----------------------------------//
+
+
+//-------REVERSAL------------//
+
+
+void reverse_linked_list(Node* head, Node** ptr_to_head_ptr) {
+
+	Node* current = head;
+	Node* prev = NULL;
+	Node* next = NULL;
+	int index_counter = 0;
+	while (current != NULL) {
+
+		next = current->next_node_ptr;
+		current->next_node_ptr = prev;
+		prev = current;
+		current = next;
+		index_counter += 1;
+	}
+	*ptr_to_head_ptr = prev;
+
+
+}
+
+
+//-------REVERSAL------------//
 
 

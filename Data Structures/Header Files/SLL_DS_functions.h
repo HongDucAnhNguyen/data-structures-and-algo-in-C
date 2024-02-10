@@ -25,4 +25,4 @@ void remove_at_beginning(Node** pointer_to_head_pointer, Node* head);
 
 
 
-
+void reverse_linked_list(Node* head, Node** ptr_to_head_ptr);
