@@ -228,6 +228,13 @@ int insert_at_index(int node_data, int insert_index, Node* head, Node** ptr_to_h
 	}
 
 
+	if (is_empty(head)) {
+
+		printf("list is currently empty\n");
+		return 0;
+	}
+
+
 	Node* node_retrieved = find_element_by_index(insert_index, head);
 	if (node_retrieved == NULL) {
 		printf("No matching nodes found\n");
@@ -309,7 +316,11 @@ int remove_at_index(int remove_index, Node* head, Node** ptr_to_head_ptr)
 		remove_at_beginning(ptr_to_head_ptr, head);
 		return 0;
 	}
+	if (is_empty(head)) {
 
+		printf("list is currently empty\n");
+		return 0;
+	}
 
 	Node* node_retrieved = find_element_by_index(remove_index, head);
 	if (node_retrieved == NULL) {
@@ -336,24 +347,39 @@ int remove_at_index(int remove_index, Node* head, Node** ptr_to_head_ptr)
 
 void remove_at_end(Node* head)
 {
-	Node* current_location = head;
-	while (current_location->next_node_ptr->next_node_ptr != NULL) {
 
-		current_location = current_location->next_node_ptr;
+	if (is_empty(head)) {
 
+		printf("list is currently empty\n");
 	}
-	free(current_location->next_node_ptr->next_node_ptr);
-	current_location->next_node_ptr = NULL;
+	else {
+		Node* current_location = head;
+		while (current_location->next_node_ptr->next_node_ptr != NULL) {
+
+			current_location = current_location->next_node_ptr;
+
+		}
+		free(current_location->next_node_ptr->next_node_ptr);
+		current_location->next_node_ptr = NULL;
+	}
+
 
 }
 
 void remove_at_beginning(Node** ptr_to_head_ptr, Node* head)
 {
-	Node* prev_head_next = head->next_node_ptr;
-	free(head);
 
-	*ptr_to_head_ptr = prev_head_next;
 
+	if (is_empty(head)) {
+
+		printf("list is currently empty\n");
+	}
+	else {
+		Node* prev_head_next = head->next_node_ptr;
+		free(head);
+
+		*ptr_to_head_ptr = prev_head_next;
+	}
 }
 
 //-------------------REMOVAL----------------------------------//
