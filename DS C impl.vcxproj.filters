@@ -54,10 +54,16 @@
     <ClCompile Include="Data Structures\Header Files\SLL_DS_functions.h">
       <Filter>Source Files\Data Structures\Linked List</Filter>
     </ClCompile>
+    <ClCompile Include="Algorithms\Source\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data Structures\Header Files\node.h">
       <Filter>Source Files\Data Structures\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithms\Header Files\Header.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
